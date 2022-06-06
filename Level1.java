@@ -15,5 +15,8 @@ public class Level1 extends Levels
      */
     public Level1()
     {
+        //want to set background to one of the subclasses of the Background class
+        addObject(new Masky(), 27, 573);
+        
     }
 }

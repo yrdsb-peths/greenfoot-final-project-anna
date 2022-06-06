@@ -16,7 +16,7 @@ public class TitleScreenWorld extends World
     public TitleScreenWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(700, 400, 1); 
+        super(800, 600, 1); 
         
         Label title = new Label("Insert Title Here", 70);
         addObject(title, 350, 200);
