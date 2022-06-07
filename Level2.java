@@ -15,5 +15,8 @@ public class Level2 extends Levels
      */
     public Level2()
     {
+        GreenfootImage bkgrd = new GreenfootImage("images/colour0.png");
+        bkgrd.scale(getWidth(), getHeight());
+        setBackground(bkgrd);
     }
 }

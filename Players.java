@@ -3,12 +3,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Players here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Anna Cheng 
+ * @June 7 2022
  */
 public class Players extends Actor
 {
-    int vSpeed = 0;
+    int vSpeed = 1;
     int accel = 0;
     int speed = 5;
     /**
