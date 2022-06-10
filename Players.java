@@ -50,7 +50,7 @@ public class Players extends Actor
     }
     public void jump()
     {
-        if(Greenfoot.isKeyDown("space"))
+        if(Greenfoot.isKeyDown("space")|| Greenfoot.isKeyDown("up")) 
         {
             vSpeed = -12;
         }

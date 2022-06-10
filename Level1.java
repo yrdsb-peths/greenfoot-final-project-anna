@@ -21,6 +21,7 @@ public class Level1 extends Levels
         setBackground(bkgrd);
         
         addObject(new Masky(), 27, 573);
+        addObject(new EndFlag(), 40, 70);
         
     }
 }
