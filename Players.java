@@ -55,4 +55,8 @@ public class Players extends Actor
             vSpeed = -12;
         }
     }
+    public void nextLvl()
+    {
+        //if(isTouching)
+    }
 }

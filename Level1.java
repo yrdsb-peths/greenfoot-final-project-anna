@@ -22,6 +22,5 @@ public class Level1 extends Levels
         
         addObject(new Masky(), 27, 573);
         addObject(new EndFlag(), 40, 70);
-        
     }
 }
