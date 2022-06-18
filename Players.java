@@ -17,10 +17,10 @@ public class Players extends Actor
      */
     public void act()
     {
-        jump();
         checkFalling();
         fall();
         navigate();
+        jump();
     }
     public void navigate()
     {

@@ -12,9 +12,12 @@ public class Platform extends Grassland
      * Act - do whatever the Platform wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int WIDTH = 180;
+    int HEIGHT = 90;
+    
     public Platform() 
     {
-        getImage();
+        getImage().scale(WIDTH, HEIGHT);
     }
     public Platform(int width, int height)
     {
