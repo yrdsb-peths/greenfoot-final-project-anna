@@ -32,9 +32,9 @@ public class Level1 extends Levels
         addObject(new B2(), 835, 698);
         addObject(new Platform(), 357, 363);
         addObject(new Platform(90, 60), 256, 378);
-        
+        addObject(new Platform(200, 90), 92, 698);
         //Player
-        addObject(new Masky(), 27, 673);
+        addObject(new Masky(), 15, 658);
         //addObject(new EndFlag(), 40, 70);
     }
 }
