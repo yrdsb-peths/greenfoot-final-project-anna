@@ -8,12 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Platform extends Grassland
 {
-    /**
-     * Act - do whatever the Platform wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    int WIDTH = 180;
-    int HEIGHT = 90;
+    public final int WIDTH = 180;
+    public final int HEIGHT = 90;
     
     public Platform() 
     {
@@ -23,6 +19,11 @@ public class Platform extends Grassland
     {
         getImage().scale(width, height);
     }
+    
+    /**
+     * Act - do whatever the Platform wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         // Add your action code here.

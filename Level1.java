@@ -35,7 +35,14 @@ public class Level1 extends Levels
         addObject(new Platform(200, 80), 62, 464);
         addObject(new Platform(210, 80), 1044, 393);
         addObject(new Platform(230, 90), 702, 229);
-
+        
+        //Fruits
+        addObject(new Apple(), 276, 261);
+        addObject(new Apple(), 353, 261);
+        addObject(new Apple(), 430, 261);
+        addObject(new Apple(), 308, 201);
+        addObject(new Apple(), 390, 201);
+        addObject(new Apple(), 353, 143);
         //Player
         addObject(new Masky(), 82, 618);
         //addObject(new EndFlag(), 40, 70);

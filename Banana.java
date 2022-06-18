@@ -8,12 +8,29 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Banana extends Fruits
 {
+    private SimpleTimer animTimer;
+    public Banana()
+    {
+        images = new GreenfootImage[17];
+        
+        for(int i = 0; i < images.length; i++)
+        {
+            images[i] = new GreenfootImage("images/Sprite/PixelAdventure/Items/Fruits/Banana/" + i + ".png");
+            images[i].scale(WIDTH, HEIGHT);
+        }
+        setImage(images[0]);
+        animTimer = new SimpleTimer();
+        animTimer.mark();
+    }
+    
     /**
-     * Act - do whatever the Banana wants to do. This method is called whenever
+     * Act - do whatever the Apple wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
     public void act()
     {
-        // Add your action code here.
+        super.animateFruit();
+        super.collected();
     }
 }
