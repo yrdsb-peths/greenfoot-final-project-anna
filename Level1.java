@@ -20,10 +20,10 @@ public class Level1 extends Levels
         setBackground(bkgrd);
         
         addObject(new Masky(), 27, 573);
-        addObject(new RectangleBlock(), 538, 493);
-        addObject(new B1(), 336, 498);
-        addObject(new B1(), 227, 566);
-        addObject(new B2(), 355, 566);
+        addObject(new RectangleBlock(), 538, 500);
+        addObject(new B1(), 336, 510);
+        addObject(new B1(), 227, 580);
+        addObject(new B2(), 355, 580);
         //addObject(new EndFlag(), 40, 70);
     }
 }
