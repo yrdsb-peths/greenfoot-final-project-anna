@@ -12,6 +12,14 @@ public class B8 extends SingleBlocks
      * Act - do whatever the B8 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public B8()
+    {
+        getImage();
+    }
+    public B8(int width, int height)
+    {
+        getImage().scale(width, height);
+    } 
     public void act()
     {
         // Add your action code here.

@@ -18,12 +18,18 @@ public class Level1 extends Levels
         GreenfootImage bkgrd = new GreenfootImage("images/colour1.png");
         bkgrd.scale(getWidth(), getHeight());
         setBackground(bkgrd);
-        
+
         addObject(new Masky(), 27, 573);
-        addObject(new RectangleBlock(), 538, 500);
-        addObject(new B1(), 336, 510);
-        addObject(new B1(), 227, 580);
-        addObject(new B2(), 355, 580);
+        addObject(new RectangleBlock(300, 250), 483, 563);
+        addObject(new B1(90,90), 338, 547);
+        addObject(new B1(), 224, 595);
+        addObject(new B2(), 303, 595);
+        addObject(new B3(120, 100), 625, 553);
+        addObject(new SquareBlock(270, 270), 980, 597);
+        addObject(new B2(), 681, 598);
+        addObject(new B2(), 757, 598);
+        addObject(new B2(), 835, 598);
+
         //addObject(new EndFlag(), 40, 70);
     }
 }

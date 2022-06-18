@@ -12,6 +12,14 @@ public class B6 extends SingleBlocks
      * Act - do whatever the B6 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public B6()
+    {
+        getImage();
+    }
+    public B6(int width, int height)
+    {
+        getImage().scale(width, height);
+    } 
     public void act()
     {
         // Add your action code here.

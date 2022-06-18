@@ -18,8 +18,7 @@ public class SquareBlock extends Grassland
     }
     public SquareBlock(int width, int height)
     {
-        this.width = width;
-        this.height = height;
+        getImage().scale(width, height);
     }
     public void act()
     {

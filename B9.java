@@ -12,6 +12,14 @@ public class B9 extends SingleBlocks
      * Act - do whatever the B9 wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    public B9()
+    {
+        getImage();
+    }
+    public B9(int width, int height)
+    {
+        getImage().scale(width, height);
+    } 
     public void act()
     {
         // Add your action code here.

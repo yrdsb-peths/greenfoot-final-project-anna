@@ -12,9 +12,11 @@ public class SingleBlocks extends Grassland
      * Act - do whatever the SingleBlocks wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    int WIDTH = 80;
+    int HEIGHT = 80;
     public SingleBlocks() 
     {
-        getImage();
+        getImage().scale(WIDTH,HEIGHT);
     }
     public SingleBlocks(int width, int height)
     {
