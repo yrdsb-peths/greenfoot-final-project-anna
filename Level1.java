@@ -47,9 +47,9 @@ public class Level1 extends Levels
         addObject(new Lemon(), 655, 153);
         addObject(new Lemon(), 744, 153);
         addObject(new Lemon(), 699, 89);
-        addObject(new Cherry(), 59, 555);
-        addObject(new Cherry(), 159, 555);
-        addObject(new Cherry(), 253, 555);
+        addObject(new Cherry(), 378, 463);
+        addObject(new Cherry(), 486, 463);
+        addObject(new Cherry(), 585, 463);
         addObject(new Pineapple(), 1035, 310);
         addObject(new Pineapple(), 1035, 205);
         addObject(new Pineapple(), 1035, 96);
