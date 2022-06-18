@@ -16,6 +16,8 @@ public class InstructionsWorld extends World
     public InstructionsWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(900, 650, 1, true); 
+        super(1100, 670, 1, true); 
+        //Greenfoot.playSound("frog_sound.mp3");
+
     }
 }

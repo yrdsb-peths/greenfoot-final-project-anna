@@ -16,4 +16,9 @@ public class Fruits extends Actor
     {
         // Add your action code here.
     }
+    
+    public void collected()
+    {
+    //complete this later   
+    }
 }

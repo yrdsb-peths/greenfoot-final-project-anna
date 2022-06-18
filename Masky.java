@@ -23,26 +23,62 @@ public class Masky extends Players
         for(int i = 0; i < idle.length; i++)
         {
             idle[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Idle/tile" + i + ".png");  
-            idle[i].scale(70, 70);
+            idle[i].scale(WIDTH, HEIGHT);
         }
             
-        //runRight = new GreenfootImage[]; 
-        //runLeft = new GreenfootImage[]; 
-        //for(int i = 0; i < )
+        runRight = new GreenfootImage[12]; 
+        runLeft = new GreenfootImage[12]; 
+        for(int i = 0; i < runRight.length; i++)
+        {
+            runRight[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Run/"+ i + ".png");    
+            runRight[i].scale(WIDTH, HEIGHT);
+            runLeft[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Run/"+ i + ".png");   
+            runLeft[i].mirrorHorizontally();
+            runLeft[i].scale(WIDTH, HEIGHT);
+        }
         setImage(idle[0]);
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
-    /**
-     * Act - do whatever the Players wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    public void animate()
+    {
+        if(isFacingRight)
+        {
+            setImage(runRight[curIndex]);
+        }
+        else
+        {
+            setImage(runLeft[curIndex]);
+        }
+        if(animTimer.millisElapsed() > 50)
+        {
+            curIndex++;
+            curIndex %= 5;
+            animTimer.mark();    
+        }
+    }
+    //!!!!!!update this method when you get to this step
+    public void eat()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        if(isTouching(Fruits.class))
+        {
+            removeTouching(Fruits.class);
+            //world.increaseScore();
+        }
+    }
     public void act()
     {
-        super.jump();
-        super.fall();
-        super.checkFalling();
-        super.navigate();
+        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
+        {
+            isFacingRight = false;
+            move(-3);
+        }
+        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
+        {
+            isFacingRight = true;
+            move(3);
+        }
+        animate();
     }
-    
 }
