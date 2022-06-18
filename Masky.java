@@ -42,18 +42,22 @@ public class Masky extends Players
     }
     public void animate()
     {
-        if(isFacingRight)
+        if(Greenfoot.isKeyDown("null"))
+        {
+            setImage(idle[curIndex]);    
+        }
+        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             setImage(runRight[curIndex]);
         }
-        else
+        else if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             setImage(runLeft[curIndex]);
         }
         if(animTimer.millisElapsed() > 50)
         {
             curIndex++;
-            curIndex %= 5;
+            curIndex %= 11;
             animTimer.mark();    
         }
     }
