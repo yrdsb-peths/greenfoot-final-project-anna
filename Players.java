@@ -11,6 +11,7 @@ public class Players extends Actor
     int vSpeed = 1;
     int accel = 0;
     int speed = 5;
+    
     /**
      * Act - do whatever the Players wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
