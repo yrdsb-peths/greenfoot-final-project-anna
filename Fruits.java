@@ -16,17 +16,6 @@ public class Fruits extends Actor
     private int delay = 0;
     private SimpleTimer animTimer;
     
-    public void animateFruit()
-    {
-        setImage(images[curIndex]);
-        
-        if(animTimer.millisElapsed() > 20)
-        {
-            curIndex++;
-            curIndex %= 17;
-            animTimer.mark();
-        }
-    }
     /**
      *This method animates the dissapearing of the fruits when touched 
      *by any subclass of the Player class
@@ -46,6 +35,16 @@ public class Fruits extends Actor
             animTimer.mark();
         }
         animateGone();
+    }
+    public void animateFruit()
+    {
+        setImage(images[curIndex]);
+        if(animTimer.millisElapsed() > 20)
+        {
+            curIndex++;
+            curIndex %= 17;
+            animTimer.mark();
+        }
     }
     public void animateGone()
     {

@@ -35,6 +35,7 @@ public class Level1 extends Levels
         addObject(new Platform(200, 80), 62, 464);
         addObject(new Platform(210, 80), 1044, 393);
         addObject(new Platform(230, 90), 702, 229);
+        addObject(new Platform(90, 60), 702, 257);
         
         //Fruits
         addObject(new Apple(), 276, 261);
@@ -43,6 +44,15 @@ public class Level1 extends Levels
         addObject(new Apple(), 308, 201);
         addObject(new Apple(), 390, 201);
         addObject(new Apple(), 353, 143);
+        addObject(new Lemon(), 655, 153);
+        addObject(new Lemon(), 744, 153);
+        addObject(new Lemon(), 699, 89);
+        addObject(new Cherry(), 59, 555);
+        addObject(new Cherry(), 159, 555);
+        addObject(new Cherry(), 253, 555);
+        addObject(new Pineapple(), 1035, 310);
+        addObject(new Pineapple(), 1035, 205);
+        addObject(new Pineapple(), 1035, 96);
         //Player
         addObject(new Masky(), 82, 618);
         //addObject(new EndFlag(), 40, 70);
