@@ -29,10 +29,10 @@ public class Level1 extends Levels
         addObject(new B3(120, 100), 652, 651);
         addObject(new SquareBlock(270, 270), 980, 667);
         addObject(new RectangleBlock(300, 250), 488, 650);
-        addObject(new Platform(200, 70), 95, 693);
+        addObject(new Platform(200, 70), 95, 700);
         addObject(new Platform(200, 70), 377, 293);
-        addObject(new Platform(100, 40), 277, 319);
-        addObject(new Platform(230, 60), 64, 470);
+        addObject(new Platform(100, 40), 277, 310);
+        addObject(new Platform(230, 60), 73, 440);
         addObject(new Platform(220, 60), 1044, 393);
         addObject(new Platform(240, 70), 722, 189);
         addObject(new Platform(100, 40), 722, 217);
@@ -55,10 +55,10 @@ public class Level1 extends Levels
         addObject(new Pineapple(), 1035, 96);
         
         //Checkpoints
-        addObject(new StartFlag(), 56, 613);
+        addObject(new StartFlag(), 52, 623);
         //addObject(new EndFlag(), 40, 70);
         
         //Player
-        addObject(new NinjaFrog(), 73, 616);
+        addObject(new NinjaFrog(), 71, 630);
     }
 }
