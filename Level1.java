@@ -53,8 +53,12 @@ public class Level1 extends Levels
         addObject(new Pineapple(), 1035, 310);
         addObject(new Pineapple(), 1035, 205);
         addObject(new Pineapple(), 1035, 96);
+        
+        //Checkpoints
+        addObject(new StartFlag(), 57, 602);
+        
         //Player
-        addObject(new NinjaFrog(), 82, 618);
+        addObject(new NinjaFrog(), 73, 605);
         //addObject(new EndFlag(), 40, 70);
     }
 }
