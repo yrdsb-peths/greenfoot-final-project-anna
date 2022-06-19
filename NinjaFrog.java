@@ -89,6 +89,11 @@ public class NinjaFrog extends Players
         if(isOnSolidGround())
         {
             velocity = 0;
+            while(isOnSolidGround())
+            {
+                setLocation(getX(), getY() - 1);
+            }
+            setLocation(getX(), getY() + 1);
         }
         else if(velocity < 0 && didBumpHead())
         {
