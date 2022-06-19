@@ -19,7 +19,7 @@ public class Level2 extends Levels
         bkgrd.scale(getWidth(), getHeight());
         setBackground(bkgrd);
         
-        addObject(new Players(), 34, 78);
+        addObject(new NinjaFrog(), 34, 78);
         addObject(new Platform(), 81, 629);
     }
 }

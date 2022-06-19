@@ -14,6 +14,14 @@ public class NinjaFrog extends Players
     private GreenfootImage[] jumpImages = new GreenfootImage[6];
 
     private SimpleTimer animTimer;
+    public void act()
+    {
+        fall();
+        navigate();
+        animateJump();
+        animateShift();
+        eat();
+    }
 
     public NinjaFrog()
     {        
@@ -44,10 +52,10 @@ public class NinjaFrog extends Players
 
     public void animateJump()
     {
-        if ((isTouching(Terrains.class) || isTouching(Checkpoints.class)) && (Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up")))
+        if ((Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up")) && isOnSolidGround())
         {
             setImage(jumpImages[curIndex]);
-            velocity = -10; 
+            velocity = -15; 
         }
         if(animTimer.millisElapsed() > 50)
         {
@@ -75,19 +83,14 @@ public class NinjaFrog extends Players
         }
     }
 
-    public void act()
-    {
-        animateJump();
-        fall();
-        navigate();
-        animateShift();
-        eat();
-    }
-
     public void fall()
     {
         setLocation(getX(), getY() + velocity);
-        if(isTouching(Terrains.class) || isTouching(Checkpoints.class))
+        if(isOnSolidGround())
+        {
+            velocity = 0;
+        }
+        else if(velocity < 0 && didBumpHead())
         {
             velocity = 0;
         }
@@ -96,25 +99,92 @@ public class NinjaFrog extends Players
             velocity += GRAVITY;
         }
     }
+
     public void navigate()
     {
         int x = getX();
         int y = getY();
-        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
+        if((Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right")) && canMoveRight())
         {
             x += SHIFT;   
         }
-        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
+        if((Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left")) && canMoveLeft())
         {
             x -= SHIFT;
         }
         setLocation(x,y);
     }
+
     public void eat()
     {
         if(isTouching(Fruits.class))
         {
             removeTouching(Fruits.class);
         }
+    }
+
+    public boolean isOnSolidGround()
+    {
+        boolean isOnGround = false;
+        if((getY() > getWorld().getHeight() - 50) || 
+        (isTouching(Terrains.class) || isTouching(Checkpoints.class)))
+        {
+            isOnGround = true;   
+        }
+
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+
+        if((getOneObjectAtOffset(imageWidth/-2, imageHeight/2, Terrains.class) != null) ||
+        (getOneObjectAtOffset(imageWidth/2, imageHeight/2, Terrains.class) != null))
+        {
+            isOnGround = true;
+        }
+        return isOnGround;
+    }
+
+    public boolean didBumpHead()
+    {
+        boolean bumpedHead = false;
+
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+
+        if((getOneObjectAtOffset(imageWidth/-2, imageHeight/-2, Terrains.class) != null) ||
+        (getOneObjectAtOffset(imageWidth/2, imageHeight/-2, Terrains.class) != null))
+        {
+            bumpedHead = true;
+        }  
+        return bumpedHead;
+    }
+
+    public boolean canMoveLeft()
+    {
+        boolean canMoveL = true;
+
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+
+        if((getOneObjectAtOffset(imageWidth/-2 - SHIFT, imageHeight/-2, Terrains.class) != null) ||
+        (getOneObjectAtOffset(imageWidth/-2 - SHIFT, imageHeight/2 - 1, Terrains.class) != null))
+        {
+            canMoveL = false;
+        }  
+        return canMoveL;        
+    }
+
+    public boolean canMoveRight()
+    {
+        boolean canMoveR = true;
+
+        int imageWidth = getImage().getWidth();
+        int imageHeight = getImage().getHeight();
+
+        if((getOneObjectAtOffset(imageWidth/-2 + SHIFT, imageHeight/-2, Terrains.class) != null) ||
+        (getOneObjectAtOffset(imageWidth/-2 + SHIFT, imageHeight/2 - 1, Terrains.class) != null))
+        {
+            canMoveR = false;
+        }  
+        return canMoveR;    
     }
 }

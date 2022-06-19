@@ -20,22 +20,22 @@ public class Level1 extends Levels
         setBackground(bkgrd);
 
         //Terrain
-        addObject(new RectangleBlock(300, 250), 488, 638);
         addObject(new B1(90,90), 338, 617);
         addObject(new B1(), 224, 665);
-        addObject(new B2(), 303, 665);
-        addObject(new B3(120, 100), 625, 623);
-        addObject(new SquareBlock(270, 270), 980, 667);
+        addObject(new B2(), 303, 665);       
         addObject(new B2(), 681, 668);
         addObject(new B2(), 757, 668);
         addObject(new B2(), 835, 668);
-        addObject(new Platform(200, 90), 92, 668);
-        addObject(new Platform(), 377, 333);
-        addObject(new Platform(90, 60), 276, 348);
-        addObject(new Platform(200, 80), 62, 464);
-        addObject(new Platform(210, 80), 1044, 393);
-        addObject(new Platform(230, 90), 702, 229);
-        addObject(new Platform(90, 60), 702, 257);
+        addObject(new B3(120, 100), 625, 623);
+        addObject(new SquareBlock(270, 270), 980, 667);
+        addObject(new RectangleBlock(300, 250), 488, 638);
+        addObject(new Platform(200, 70), 92, 679);
+        addObject(new Platform(200, 70), 377, 313);
+        addObject(new Platform(100, 40), 276, 320);
+        addObject(new Platform(230, 60), 62, 464);
+        addObject(new Platform(220, 60), 1044, 393);
+        addObject(new Platform(240, 70), 702, 229);
+        addObject(new Platform(100, 40), 702, 257);
         
         //Fruits
         addObject(new Apple(), 276, 261);
