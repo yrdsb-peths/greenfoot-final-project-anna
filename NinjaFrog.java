@@ -44,9 +44,10 @@ public class NinjaFrog extends Players
 
     public void animateJump()
     {
-        if (Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up"))
+        if ((isTouching(Terrains.class) || isTouching(Checkpoints.class)) && (Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up")))
         {
             setImage(jumpImages[curIndex]);
+            velocity = -10; 
         }
         if(animTimer.millisElapsed() > 50)
         {
@@ -76,20 +77,16 @@ public class NinjaFrog extends Players
 
     public void act()
     {
-        jump();
+        animateJump();
         fall();
         navigate();
-        animateJump();
         animateShift();
-    }
-
-    public void jump()
-    {
-        velocity = -20;    
+        eat();
     }
 
     public void fall()
     {
+        setLocation(getX(), getY() + velocity);
         if(isTouching(Terrains.class) || isTouching(Checkpoints.class))
         {
             velocity = 0;
@@ -98,9 +95,7 @@ public class NinjaFrog extends Players
         {
             velocity += GRAVITY;
         }
-        setLocation(getX(), getY() + velocity);
     }
-
     public void navigate()
     {
         int x = getX();
@@ -114,5 +109,12 @@ public class NinjaFrog extends Players
             x -= SHIFT;
         }
         setLocation(x,y);
+    }
+    public void eat()
+    {
+        if(isTouching(Fruits.class))
+        {
+            removeTouching(Fruits.class);
+        }
     }
 }

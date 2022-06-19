@@ -65,7 +65,10 @@ public class Masky extends Players
     }
     public void jump()
     {
-        velocity = -20;    
+        if(Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up"))
+        {
+            velocity = -20;    
+        }   
     }
     public void fall()
     {
