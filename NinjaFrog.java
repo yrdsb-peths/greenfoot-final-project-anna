@@ -55,7 +55,7 @@ public class NinjaFrog extends Players
         if ((Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up")) && isOnSolidGround())
         {
             setImage(jumpImages[curIndex]);
-            velocity = -18; 
+            velocity = -15; 
         }
         if(animTimer.millisElapsed() > 50)
         {
