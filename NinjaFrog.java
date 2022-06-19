@@ -26,7 +26,7 @@ public class NinjaFrog extends Players
         {
             runRightImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/run/"+ i + ".png");    
             runRightImages[i].scale(WIDTH, HEIGHT);
-           
+
             runLeftImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/run/"+ i + ".png");   
             runLeftImages[i].mirrorHorizontally();
             runLeftImages[i].scale(WIDTH, HEIGHT);
@@ -36,11 +36,26 @@ public class NinjaFrog extends Players
             jumpImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/jump/" + i + ".png");
             jumpImages[i].scale(WIDTH, HEIGHT);
         }
-        
+
         setImage(idleImages[0]);
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
+
+    public void animateJump()
+    {
+        if (Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up"))
+        {
+            setImage(jumpImages[curIndex]);
+        }
+        if(animTimer.millisElapsed() > 50)
+        {
+            curIndex++;
+            curIndex %= 5;
+            animTimer.mark();    
+        }
+    }
+
     public void animateShift()
     {  
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
@@ -58,32 +73,21 @@ public class NinjaFrog extends Players
             animTimer.mark();    
         }
     }
-    public void animateJump()
-    {
-        curIndex = 0;
-        if (Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up"))
-        {
-            setImage(jumpImages[curIndex]);
-        }
-        if(animTimer.millisElapsed() > 50)
-        {
-            curIndex++;
-            curIndex %= 5;
-            animTimer.mark();    
-        }
-    }
+
     public void act()
     {
+        jump();
         fall();
         navigate();
-        jump();
-        animateShift();
         animateJump();
+        animateShift();
     }
+
     public void jump()
     {
         velocity = -20;    
     }
+
     public void fall()
     {
         if(isTouching(Terrains.class) || isTouching(Checkpoints.class))
@@ -96,6 +100,7 @@ public class NinjaFrog extends Players
         }
         setLocation(getX(), getY() + velocity);
     }
+
     public void navigate()
     {
         int x = getX();
