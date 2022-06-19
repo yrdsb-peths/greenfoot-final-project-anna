@@ -9,17 +9,17 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Fruits extends Actor
 {
     public GreenfootImage[] images;
-    public GreenfootImage[] gone;
+    //public GreenfootImage[] gone;
     public final int WIDTH = 97;
     public final int HEIGHT = 97;
-    private int curIndex = 0;
     private int delay = 0;
     private SimpleTimer animTimer;
     
     /**
      *This method animates the dissapearing of the fruits when touched 
      *by any subclass of the Player class
-     */
+     
+    //see where to put this method!!!!!!!
     public void collected()
     {
         if(isTouching(Players.class))
@@ -34,36 +34,14 @@ public class Fruits extends Actor
             animTimer = new SimpleTimer();
             animTimer.mark();
         }
-        animateGone();
     }
-    public void animateFruit()
-    {
-        setImage(images[curIndex]);
-        if(animTimer.millisElapsed() > 20)
-        {
-            curIndex++;
-            curIndex %= 17;
-            animTimer.mark();
-        }
-    }
-    public void animateGone()
-    {
-        setImage(gone[curIndex]);
-        
-        if(animTimer.millisElapsed() > 20)
-        {
-            curIndex++;
-            curIndex %= 6;
-            animTimer.mark();
-        }   
-    }
+    */
     /**
      * Act - do whatever the Fruits wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        animateFruit();
-        collected();
-    }   
+        
+    } 
 }

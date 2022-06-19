@@ -9,6 +9,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Lemon extends Fruits
 {
     private SimpleTimer animTimer;
+    private int curIndex = 0;
+      
     public Lemon()
     {
         images = new GreenfootImage[17];
@@ -22,15 +24,19 @@ public class Lemon extends Fruits
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
-    
-    /**
-     * Act - do whatever the Apple wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    
+    public void animate()
+    {
+        setImage(images[curIndex]);
+        if(animTimer.millisElapsed() > 20)
+        {
+            curIndex++;
+            curIndex %= 17;
+            animTimer.mark();
+        }
+    }
     public void act()
     {
-        super.animateFruit();
-        super.collected();
+        animate();
+        //collected();
     }
 }
