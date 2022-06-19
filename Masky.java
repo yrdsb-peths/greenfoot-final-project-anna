@@ -8,48 +8,45 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Masky extends Players
 {
-    private GreenfootImage[] runRight;
-    private GreenfootImage[] runLeft;
-    private GreenfootImage[] idle;
-
-    private SimpleTimer animTimer;
-    private int delay = 0;
-    private boolean isFacingRight = true;
-    int curIndex = 0;
+    private GreenfootImage[] runRightImages;
+    private GreenfootImage[] runLeftImages;
+    private GreenfootImage[] idleImages;
+    
+    private SimpleTimer animTimer; 
     
     public Masky()
     {
-        idle = new GreenfootImage[11]; 
-        for(int i = 0; i < idle.length; i++)
+        idleImages = new GreenfootImage[11]; 
+        for(int i = 0; i < idleImages.length; i++)
         {
-            idle[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Idle/tile" + i + ".png");  
-            idle[i].scale(WIDTH, HEIGHT);
+            idleImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Idle/tile" + i + ".png");  
+            idleImages[i].scale(WIDTH, HEIGHT);
         }
             
-        runRight = new GreenfootImage[12]; 
-        runLeft = new GreenfootImage[12]; 
-        for(int i = 0; i < runRight.length; i++)
+        runRightImages = new GreenfootImage[12]; 
+        runLeftImages = new GreenfootImage[12]; 
+        for(int i = 0; i < runRightImages.length; i++)
         {
-            runRight[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Run/"+ i + ".png");    
-            runRight[i].scale(WIDTH, HEIGHT);
-            runLeft[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Run/"+ i + ".png");   
-            runLeft[i].mirrorHorizontally();
-            runLeft[i].scale(WIDTH, HEIGHT);
+            runRightImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Run/"+ i + ".png");    
+            runRightImages[i].scale(WIDTH, HEIGHT);
+            runLeftImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Mask_Dude/Run/"+ i + ".png");   
+            runLeftImages[i].mirrorHorizontally();
+            runLeftImages[i].scale(WIDTH, HEIGHT);
         }
-        setImage(idle[0]);
+        setImage(idleImages[0]);
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
     public void animate()
     {
-        setImage(idle[curIndex]);    
+        setImage(idleImages[curIndex]);    
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
-            setImage(runRight[curIndex]);
+            setImage(runRightImages[curIndex]);
         }
         else if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
-            setImage(runLeft[curIndex]);
+            setImage(runLeftImages[curIndex]);
         }
         if(animTimer.millisElapsed() > 50)
         {
@@ -58,28 +55,42 @@ public class Masky extends Players
             animTimer.mark();    
         }
     }
-    //!!!!!!update this method when you get to this step
-    public void eat()
-    {
-        MyWorld world = (MyWorld) getWorld();
-        if(isTouching(Fruits.class))
-        {
-            removeTouching(Fruits.class);
-            //world.increaseScore();
-        }
-    }
+    
     public void act()
     {
-        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
+        animate();
+        fall();
+        navigate();
+        jump();
+    }
+    public void jump()
+    {
+        velocity = -20;    
+    }
+    public void fall()
+    {
+        if(isTouching(Terrains.class) || isTouching(Checkpoints.class))
         {
-            isFacingRight = false;
-            move(-3);
+            velocity = 0;
         }
+        else
+        {
+            velocity += GRAVITY;
+        }
+        setLocation(getX(), getY() + velocity);
+    }
+    public void navigate()
+    {
+        int x = getX();
+        int y = getY();
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
-            isFacingRight = true;
-            move(3);
+            x += SHIFT;   
         }
-        animate();
+        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
+        {
+            x -= SHIFT;
+        }
+        setLocation(x,y);
     }
 }

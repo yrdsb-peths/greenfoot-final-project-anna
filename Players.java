@@ -13,37 +13,14 @@ public class Players extends Actor
     public final int WIDTH = 70;
     public final int HEIGHT = 70;
     public int velocity;
-    
-    public Players()
-    {
-        velocity = 0;
-    }
+    public int curIndex = 0; 
+    public boolean isFacingRight = true;
+
     public void act()
     {
-        fall();
-        if(Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up") && isTouching(Terrains.class))
-        {
-            jump();
-        }        
-        navigate();
+        move();
     }
-    public void fall()
-    {
-        setLocation(getX(), getY() + velocity);
-        if(isTouching(Terrains.class))
-        {
-            velocity = 0;
-        }
-        else
-        {
-            velocity += GRAVITY;
-        }
-    }
-    public void jump()
-    {
-        velocity = -20;    
-    }
-    public void navigate()
+    public void move()
     {
         int x = getX();
         int y = getY();
@@ -54,7 +31,15 @@ public class Players extends Actor
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
         {
             x -= SHIFT;
+        } 
+        if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
+        {
+            y += SHIFT;
         }
+        if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
+        {
+            y -= SHIFT;
+        } 
         setLocation(x,y);
-    }    
+    }
 }
