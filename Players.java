@@ -18,28 +18,6 @@ public class Players extends Actor
 
     public void act()
     {
-        move();
-    }
-    public void move()
-    {
-        int x = getX();
-        int y = getY();
-        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
-        {
-            x += SHIFT;
-        }
-        if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
-        {
-            x -= SHIFT;
-        } 
-        if(Greenfoot.isKeyDown("s") || Greenfoot.isKeyDown("down"))
-        {
-            y += SHIFT;
-        }
-        if(Greenfoot.isKeyDown("w") || Greenfoot.isKeyDown("up"))
-        {
-            y -= SHIFT;
-        } 
-        setLocation(x,y);
+        
     }
 }

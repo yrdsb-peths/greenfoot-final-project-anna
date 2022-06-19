@@ -8,50 +8,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class NinjaFrog extends Players
 {
-    private GreenfootImage[] runRightImages;
-    private GreenfootImage[] runLeftImages;
-    private GreenfootImage[] idleImages;
-    private GreenfootImage[] jumpImages;
+    private GreenfootImage[] runRightImages = new GreenfootImage[12];
+    private GreenfootImage[] runLeftImages = new GreenfootImage[12];
+    private GreenfootImage[] idleImages = new GreenfootImage[11];
+    private GreenfootImage[] jumpImages = new GreenfootImage[6];
 
     private SimpleTimer animTimer;
 
     public NinjaFrog()
     {        
-        idleImages = new GreenfootImage[11]; 
         for(int i = 0; i < idleImages.length; i++)
         {
             idleImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/idle/" + i + ".png");  
             idleImages[i].scale(WIDTH, HEIGHT);
         }
-        
-        runRightImages = new GreenfootImage[12]; 
-        runLeftImages = new GreenfootImage[12]; 
         for(int i = 0; i < runRightImages.length; i++)
         {
             runRightImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/run/"+ i + ".png");    
             runRightImages[i].scale(WIDTH, HEIGHT);
+           
             runLeftImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/run/"+ i + ".png");   
             runLeftImages[i].mirrorHorizontally();
             runLeftImages[i].scale(WIDTH, HEIGHT);
         }
-        
-        jumpImages = new GreenfootImage[6];
         for(int i = 0; i < jumpImages.length; i++)
         {
             jumpImages[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/jump/" + i + ".png");
             jumpImages[i].scale(WIDTH, HEIGHT);
         }
+        
         setImage(idleImages[0]);
         animTimer = new SimpleTimer();
         animTimer.mark();
-    }
-    public void act()
-    {
-        animateShift();
-        animateJump();
-        fall();
-        navigate();
-        jump();
     }
     public void animateShift()
     {  
@@ -83,6 +71,14 @@ public class NinjaFrog extends Players
             curIndex %= 5;
             animTimer.mark();    
         }
+    }
+    public void act()
+    {
+        fall();
+        navigate();
+        jump();
+        animateShift();
+        animateJump();
     }
     public void jump()
     {
