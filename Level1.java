@@ -15,7 +15,7 @@ public class Level1 extends Levels
     public Level1()
     {
         //Background 
-        GreenfootImage bkgrd = new GreenfootImage("images/colour1.png");
+        GreenfootImage bkgrd = new GreenfootImage("images/colour5.png");
         bkgrd.scale(getWidth(), getHeight());
         setBackground(bkgrd);
 
@@ -54,7 +54,7 @@ public class Level1 extends Levels
         addObject(new Pineapple(), 1035, 205);
         addObject(new Pineapple(), 1035, 96);
         //Player
-        addObject(new Masky(), 82, 618);
+        addObject(new NinjaFrog(), 82, 618);
         //addObject(new EndFlag(), 40, 70);
     }
 }

@@ -42,10 +42,7 @@ public class Masky extends Players
     }
     public void animate()
     {
-        if(Greenfoot.isKeyDown("null"))
-        {
-            setImage(idle[curIndex]);    
-        }
+        setImage(idle[curIndex]);    
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             setImage(runRight[curIndex]);
