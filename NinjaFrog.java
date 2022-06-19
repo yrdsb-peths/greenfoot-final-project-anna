@@ -80,17 +80,7 @@ public class NinjaFrog extends Players
             animTimer.mark();    
         }
     }
-    //!!!!!!update this method when you get to this step
-    public void eat()
-    {
-        MyWorld world = (MyWorld) getWorld();
-        if(isTouching(Fruits.class))
-        {
-            removeTouching(Fruits.class);
-            //world.increaseScore();
-        }
-    }
-
+    
     public void act()
     {
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))

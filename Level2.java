@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level2 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Anna Cheng 
+ * @June 19 2022
  */
 public class Level2 extends Levels
 {
@@ -18,5 +18,8 @@ public class Level2 extends Levels
         GreenfootImage bkgrd = new GreenfootImage("images/colour0.png");
         bkgrd.scale(getWidth(), getHeight());
         setBackground(bkgrd);
+        
+        addObject(new Players(), 34, 78);
+        addObject(new Platform(), 81, 629);
     }
 }

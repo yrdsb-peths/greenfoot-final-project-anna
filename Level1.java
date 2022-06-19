@@ -56,9 +56,9 @@ public class Level1 extends Levels
         
         //Checkpoints
         addObject(new StartFlag(), 57, 602);
+        //addObject(new EndFlag(), 40, 70);
         
         //Player
         addObject(new NinjaFrog(), 73, 605);
-        //addObject(new EndFlag(), 40, 70);
     }
 }
