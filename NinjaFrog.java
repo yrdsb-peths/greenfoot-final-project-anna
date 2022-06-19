@@ -11,12 +11,13 @@ public class NinjaFrog extends Players
     private GreenfootImage[] runRight;
     private GreenfootImage[] runLeft;
     private GreenfootImage[] idle;
+    private GreenfootImage[] jump;
 
     private SimpleTimer animTimer;
     private int delay = 0;
     private boolean isFacingRight = true;
     int curIndex = 0;
-    
+
     public NinjaFrog()
     {
         idle = new GreenfootImage[11]; 
@@ -25,7 +26,7 @@ public class NinjaFrog extends Players
             idle[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/idle/" + i + ".png");  
             idle[i].scale(WIDTH, HEIGHT);
         }
-            
+
         runRight = new GreenfootImage[12]; 
         runLeft = new GreenfootImage[12]; 
         for(int i = 0; i < runRight.length; i++)
@@ -36,13 +37,19 @@ public class NinjaFrog extends Players
             runLeft[i].mirrorHorizontally();
             runLeft[i].scale(WIDTH, HEIGHT);
         }
+        jump = new GreenfootImage[6];
+        for(int i = 0; i < jump.length; i++)
+        {
+            jump[i] = new GreenfootImage("images/Sprite/PixelAdventure/MainCharacters/Ninja_Frog/jump/" + i + ".png");
+            jump[i].scale(WIDTH, HEIGHT);
+        }
         setImage(idle[0]);
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
-    public void animate()
-    {
-        setImage(idle[curIndex]);    
+
+    public void animateMove()
+    {  
         if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
         {
             setImage(runRight[curIndex]);
@@ -58,6 +65,21 @@ public class NinjaFrog extends Players
             animTimer.mark();    
         }
     }
+
+    public void animateJump()
+    {
+        curIndex = 0;
+        if (Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up"))
+        {
+            setImage(jump[curIndex]);
+        }
+        if(animTimer.millisElapsed() > 50)
+        {
+            curIndex++;
+            curIndex %= 5;
+            animTimer.mark();    
+        }
+    }
     //!!!!!!update this method when you get to this step
     public void eat()
     {
@@ -68,6 +90,7 @@ public class NinjaFrog extends Players
             //world.increaseScore();
         }
     }
+
     public void act()
     {
         if(Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
@@ -80,6 +103,7 @@ public class NinjaFrog extends Players
             isFacingRight = true;
             move(3);
         }
-        animate();
+        animateMove();
+        animateJump();
     }
 }
