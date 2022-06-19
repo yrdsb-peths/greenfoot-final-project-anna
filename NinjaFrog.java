@@ -55,7 +55,7 @@ public class NinjaFrog extends Players
         if ((Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up")) && isOnSolidGround())
         {
             setImage(jumpImages[curIndex]);
-            velocity = -15; 
+            velocity = -18; 
         }
         if(animTimer.millisElapsed() > 50)
         {
@@ -95,6 +95,10 @@ public class NinjaFrog extends Players
             }
             setLocation(getX(), getY() + 1);
         }
+        else if(isTouching(Checkpoints.class))
+        {
+            velocity = 0;
+        }
         else if(velocity < 0 && didBumpHead())
         {
             velocity = 0;
@@ -131,8 +135,7 @@ public class NinjaFrog extends Players
     public boolean isOnSolidGround()
     {
         boolean isOnGround = false;
-        if((getY() > getWorld().getHeight() - 50) || 
-        (isTouching(Terrains.class) || isTouching(Checkpoints.class)))
+        if((getY() > getWorld().getHeight() - 50) || (isTouching(Terrains.class)))
         {
             isOnGround = true;   
         }
