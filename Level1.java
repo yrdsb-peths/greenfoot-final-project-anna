@@ -60,4 +60,8 @@ public class Level1 extends World
         //Player
         addObject(new NinjaFrog(), 71, 728);
     }
+    public void act()
+    {
+        
+    }
 }

@@ -45,4 +45,11 @@ public class InstructionsWorld extends World
         addObject(new Up(100, 100), 674, 419);
         addObject(new Start(90, 90), 1039, 637);
     }
+    public void act()
+    {
+        if(Greenfoot.mouseClicked(null))
+        {
+            Greenfoot.setWorld(new Level1());
+        }
+    }
 }
