@@ -15,7 +15,7 @@ public class InstructionsWorld extends World
     public InstructionsWorld()
     {    
         super(1100, 700, 1, true); 
-        //Greenfoot.playSound("frog_sound.mp3");
+        Greenfoot.playSound("backingTrack.mp3");
 
         //Background
         GreenfootImage background = new GreenfootImage("images/colour6.png");

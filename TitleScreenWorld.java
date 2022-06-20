@@ -17,7 +17,7 @@ public class TitleScreenWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1100, 700, 1, true); 
-        //Greenfoot.playSound("frog_sound.mp3");
+        Greenfoot.playSound("backingTrack.mp3");
        
         //background
         GreenfootImage background = new GreenfootImage("images/colour6.png");
@@ -33,8 +33,6 @@ public class TitleScreenWorld extends World
         addObject(new Chicken(), 242, 610);
         addObject(new Duck(), 403, 610);
         addObject(new Tree(), 729, 610);
-        
-        
     }
     
     public void act()

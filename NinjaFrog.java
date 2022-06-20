@@ -61,6 +61,7 @@ public class NinjaFrog extends Players
         if ((Greenfoot.isKeyDown("space") || Greenfoot.isKeyDown("up")) && isOnSolidGround())
         {
             setImage(jumpImages[curIndex]);
+            Greenfoot.playSound("jump.mp3");
             velocity = -15; 
         }
         if(animTimer.millisElapsed() > 50)
@@ -134,6 +135,7 @@ public class NinjaFrog extends Players
     {
         if(isTouching(Fruits.class))
         {
+            Greenfoot.playSound("getFruit.mp3");
             removeTouching(Fruits.class);
             Level1 score = (Level1) getWorld();
             score.increaseScore();

@@ -13,7 +13,8 @@ public class Level1 extends World
     
     public Level1()
     {
-        super(1100, 800, 1, true);         
+        super(1100, 800, 1, true); 
+        Greenfoot.playSound("backingTrack.mp3");
         //Background 
         GreenfootImage bkgrd = new GreenfootImage("images/colour5.png");
         bkgrd.scale(getWidth(), getHeight());
@@ -75,6 +76,7 @@ public class Level1 extends World
     {
         if(score == 15)
         {
+            Greenfoot.playSound("pass.mp3");
             Greenfoot.setWorld(new NextLevelWorld());    
         }
     }
