@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Enemies extends Actor
 {
-    public final int WIDTH = 70;
-    public final int HEIGHT = 70;
+    public final int WIDTH = 100;
+    public final int HEIGHT = 100;
     public int curIndex = 0; 
 }

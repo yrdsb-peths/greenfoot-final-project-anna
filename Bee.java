@@ -8,18 +8,14 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Bee extends Enemies
 {
-    private GreenfootImage[] idle = new GreenfootImage[11];
+    private GreenfootImage[] idle = new GreenfootImage[6];
     private SimpleTimer animTimer;
-    public void act()
-    {
-        animate();
-    }
-
+    
     public Bee()
     {        
         for(int i = 0; i < idle.length; i++)
         {
-            idle[i] = new GreenfootImage("images/Sprite/PixelAdventure/Enemies/Bee/" + i + ".png");  
+            idle[i] = new GreenfootImage("images/Sprite/PixelAdventure/Bee/" + i + ".png");  
             idle[i].scale(WIDTH, HEIGHT);
         }
 
@@ -28,20 +24,18 @@ public class Bee extends Enemies
         animTimer.mark();
     }
 
+    public void act()
+    {
+        animate();
+    }
+    
     public void animate()
     {  
-        if(Greenfoot.isKeyDown("d") || Greenfoot.isKeyDown("right"))
-        {
-            setImage(runRightImages[curIndex]);
-        }
-        else if (Greenfoot.isKeyDown("a") || Greenfoot.isKeyDown("left"))
-        {
-            setImage(runLeftImages[curIndex]);
-        }
+        setImage(idle[curIndex]);
         if(animTimer.millisElapsed() > 50)
         {
             curIndex++;
-            curIndex %= 11;
+            curIndex %= 5;
             animTimer.mark();    
         }
     }

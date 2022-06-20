@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Start extends Buttons
 {
-    private final int WIDTH = 100;
-    private final int HEIGHT = 100;
+    private final int WIDTH = 200;
+    private final int HEIGHT = 200;
     public Start()
     {
         getImage().scale(WIDTH, HEIGHT);
