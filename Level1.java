@@ -20,19 +20,19 @@ public class Level1 extends Levels
         setBackground(bkgrd);
 
         //Terrain
-        addObject(new B1(90,90), 310, 611);
-        addObject(new B1(), 232, 667);
-        addObject(new B2(), 312, 667);       
-        addObject(new B2(), 681, 682);
-        addObject(new B2(), 757, 682);
-        addObject(new B2(), 835, 682);
-        addObject(new B3(120, 100), 652, 651);
-        addObject(new SquareBlock(270, 270), 980, 667);
-        addObject(new RectangleBlock(300, 250), 488, 650);
-        addObject(new Platform(200, 70), 95, 700);
+        addObject(new B1(90,90), 310, 711);
+        addObject(new B1(), 232, 767);
+        addObject(new B2(), 312, 767);       
+        addObject(new B2(), 681, 782);
+        addObject(new B2(), 757, 782);
+        addObject(new B2(), 835, 782);
+        addObject(new B3(120, 100), 652, 751);
+        addObject(new SquareBlock(270, 270), 980, 767);
+        addObject(new RectangleBlock(300, 250), 488, 750);
+        addObject(new Platform(200, 70), 95, 800);
         addObject(new Platform(200, 70), 377, 293);
         addObject(new Platform(100, 40), 277, 310);
-        addObject(new Platform(230, 60), 73, 440);
+        addObject(new Platform(230, 60), 84, 490);
         addObject(new Platform(220, 60), 1044, 393);
         addObject(new Platform(240, 70), 722, 189);
         addObject(new Platform(100, 40), 722, 217);
@@ -55,10 +55,10 @@ public class Level1 extends Levels
         addObject(new Pineapple(), 1035, 96);
         
         //Checkpoints
-        addObject(new StartFlag(), 52, 623);
+        addObject(new StartFlag(), 52, 723);
         //addObject(new EndFlag(), 40, 70);
         
         //Player
-        addObject(new NinjaFrog(), 71, 630);
+        addObject(new NinjaFrog(), 71, 728);
     }
 }

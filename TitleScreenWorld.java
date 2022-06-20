@@ -16,10 +16,10 @@ public class TitleScreenWorld extends World
     public TitleScreenWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(1100, 670, 1, true); 
+        super(1100, 700, 1, true); 
         //Greenfoot.playSound("frog_sound.mp3");
 
-        Label title = new Label("Insert Title Here", 70);
+        Label title = new Label("Fruit Buddies", 70);
         addObject(title, 350, 200);
         //add start button 
     }
