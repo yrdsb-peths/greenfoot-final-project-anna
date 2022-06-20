@@ -19,9 +19,15 @@ public class TitleScreenWorld extends World
         super(1100, 700, 1, true); 
         //Greenfoot.playSound("frog_sound.mp3");
 
-        Label title = new Label("Fruit Buddies", 70);
-        addObject(title, 350, 200);
+        Label title = new Label("Fruit Buddies", 100);
+        addObject(title, 562, 270);
+        
+        //background
+        
+        
         //add start button 
+        
+        
     }
     
     public void act()
