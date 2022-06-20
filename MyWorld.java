@@ -7,10 +7,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class MyWorld extends World
-{
-    public static int score = 0;
-    public Label scoreLabel = new Label(0, 80);
-    
+{   
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.

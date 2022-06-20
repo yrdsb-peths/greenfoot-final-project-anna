@@ -8,6 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level1 extends World
 {
+    public Label scoreLabel = new Label(0,80);
+    public int score = 0;
+    
     public Level1()
     {
         super(1100, 800, 1, true); 
@@ -59,9 +62,22 @@ public class Level1 extends World
         
         //Player
         addObject(new NinjaFrog(), 71, 728);
-    }
-    public void act()
-    {
         
+        //Score
+        addObject(scoreLabel, 50, 50);
+        Label outOf = new Label("/15", 80);
+        addObject(outOf, 126, 51);
+    }
+    public void increaseScore()
+    {
+        score++;
+        scoreLabel.setValue(score);
+    }
+    public void nextLevel()
+    {
+        if(score == 15)
+        {
+            Greenfoot.setWorld(new NextLevelWorld());    
+        }
     }
 }

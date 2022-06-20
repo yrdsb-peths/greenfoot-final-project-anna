@@ -21,6 +21,11 @@ public class NinjaFrog extends Players
         animateJump();
         animateShift();
         eat();
+        if(isTouching(EndFlag.class))
+        {
+            Level1 refer = (Level1) getWorld();
+            refer.nextLevel();    
+        }
     }
 
     public NinjaFrog()
@@ -129,6 +134,8 @@ public class NinjaFrog extends Players
         if(isTouching(Fruits.class))
         {
             removeTouching(Fruits.class);
+            Level1 score = (Level1) getWorld();
+            score.increaseScore();
         }
     }
     
@@ -195,4 +202,5 @@ public class NinjaFrog extends Players
         }  
         return canMoveR;    
     }
+    
 }
