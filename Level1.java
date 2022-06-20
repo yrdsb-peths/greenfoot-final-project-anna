@@ -58,7 +58,7 @@ public class Level1 extends World
         
         //Checkpoints
         addObject(new StartFlag(), 52, 723);
-        //addObject(new EndFlag(), 40, 70);
+        addObject(new EndFlag(), 1022, 609);
         
         //Player
         addObject(new NinjaFrog(), 71, 728);

@@ -20,7 +20,8 @@ public class EndFlag extends Checkpoints
         endPoint = new GreenfootImage[8];
         for(int i = 0; i < endPoint.length; i++)
         {
-            endPoint[i] = new GreenfootImage("images/Sprite/PixelAdventure/Items/Checkpoints/End/end"+ i + ".png");
+            endPoint[i] = new GreenfootImage("images/Sprite/PixelAdventure/Items/Checkpoints/End/"+ i + ".png");
+            endPoint[i].scale(70, 70);
         }
         setImage(endPoint[0]);
         animTimer = new SimpleTimer();
@@ -29,10 +30,11 @@ public class EndFlag extends Checkpoints
     int curIndex = 0;
     public void animate()
     {
-        if(animTimer.millisElapsed()> 80)
+        setImage(endPoint[curIndex]);
+        if(animTimer.millisElapsed()> 5)
         {
             curIndex++;
-            curIndex %= 8;
+            curIndex %= 7;
             animTimer.mark();
         }
     }

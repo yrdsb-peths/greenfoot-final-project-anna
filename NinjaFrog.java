@@ -23,6 +23,7 @@ public class NinjaFrog extends Players
         eat();
         if(isTouching(EndFlag.class))
         {
+            setLocation(getX(), getY() + 10);
             Level1 refer = (Level1) getWorld();
             refer.nextLevel();    
         }
@@ -142,7 +143,7 @@ public class NinjaFrog extends Players
     public boolean isOnSolidGround()
     {
         boolean isOnGround = false;
-        if((getY() > getWorld().getHeight() - 50) || (isTouching(Terrains.class)))
+        if((getY() > getWorld().getHeight() - 50) || (isTouching(Terrains.class)) || (isTouching(EndFlag.class)))
         {
             isOnGround = true;   
         }
