@@ -13,16 +13,16 @@ public class EndFlag extends Checkpoints
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private SimpleTimer animTimer;
-    private GreenfootImage[] endPointImg;
+    private GreenfootImage[] endPoint;
     
     public EndFlag()
     {
-        endPointImg = new GreenfootImage[8];
-        for(int i = 0; i < endPointImg.length; i++)
+        endPoint = new GreenfootImage[8];
+        for(int i = 0; i < endPoint.length; i++)
         {
-            endPointImg[i] = new GreenfootImage("images/Sprite/PixelAdventure/Items/Checkpoints/End/end"+ i + ".png");
+            endPoint[i] = new GreenfootImage("images/Sprite/PixelAdventure/Items/Checkpoints/End/end"+ i + ".png");
         }
-        setImage(endPointImg[0]);
+        setImage(endPoint[0]);
         animTimer = new SimpleTimer();
         animTimer.mark();
     }
@@ -32,7 +32,7 @@ public class EndFlag extends Checkpoints
         if(animTimer.millisElapsed()> 80)
         {
             curIndex++;
-            curIndex %=8;
+            curIndex %= 8;
             animTimer.mark();
         }
     }
