@@ -37,6 +37,5 @@ public class Apple extends Fruits
     public void act()
     {
         animate();
-        //collected();
     }
 }

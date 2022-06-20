@@ -131,7 +131,7 @@ public class NinjaFrog extends Players
             removeTouching(Fruits.class);
         }
     }
-
+    
     public boolean isOnSolidGround()
     {
         boolean isOnGround = false;
