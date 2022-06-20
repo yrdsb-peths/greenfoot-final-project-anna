@@ -13,9 +13,7 @@ public class Level1 extends World
     
     public Level1()
     {
-        super(1100, 800, 1, true); 
-        //Greenfoot.playSound("frog_sound.mp3");
-        
+        super(1100, 800, 1, true);         
         //Background 
         GreenfootImage bkgrd = new GreenfootImage("images/colour5.png");
         bkgrd.scale(getWidth(), getHeight());
