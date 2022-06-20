@@ -3,17 +3,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level1 here.
  * 
- * @Anna Cheng
+ * @author (your name) 
  * @version (a version number or a date)
  */
-public class Level1 extends Levels
+public class Level1 extends World
 {
-    /**
-     * Constructor for objects of class Level1.
-     * 
-     */
     public Level1()
     {
+        super(1100, 800, 1, true); 
+        //Greenfoot.playSound("frog_sound.mp3");
+        
         //Background 
         GreenfootImage bkgrd = new GreenfootImage("images/colour5.png");
         bkgrd.scale(getWidth(), getHeight());
