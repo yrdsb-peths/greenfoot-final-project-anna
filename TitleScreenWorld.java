@@ -20,22 +20,7 @@ public class TitleScreenWorld extends World
         //Greenfoot.playSound("frog_sound.mp3");
        
         //background
-        GreenfootImage background = new GreenfootImage("images/colour6.png");
-        background.scale(getWidth(), getHeight());
-        setBackground(background);
         
-        //title
-        addObject(new Title(), 559, 181);
-        
-        //add start button 
-        addObject(new Start(), 551, 422);
-        
-        //add Characters
-        addObject(new Bee(), 888, 610);
-        addObject(new Pig(), 576, 610);
-        addObject(new Chicken(), 242, 610);
-        addObject(new Duck(), 403, 610);
-        addObject(new Tree(), 729, 610);
         
     }
     

@@ -32,10 +32,10 @@ public class InstructionsWorld extends World
         Label goal = new Label("Goal", 80);
         addObject(goal, 544, 515);
         
-        Label instruct1 = new Label("Collect all the fruits and go to the endpoint", 50);
+        Label instruct1 = new Label("Collect all the fruits and go to the", 50);
         addObject(instruct1, 544, 592);
         
-        Label instruct2 = new Label("to get to the next level.", 50);
+        Label instruct2 = new Label("endpoint to get to the next level.", 50);
         addObject(instruct2, 544, 650);
         
         //Keyboard Images
@@ -43,5 +43,6 @@ public class InstructionsWorld extends World
         addObject(new ArrowKeys(200, 150), 423, 191);       
         addObject(new Spacebar(250, 150), 419, 419);
         addObject(new Up(100, 100), 674, 419);
+        addObject(new Start(90, 90), 1039, 637);
     }
 }
