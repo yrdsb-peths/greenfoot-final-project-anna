@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class TitleScreenWorld extends World
 {
-
+    //GreenfootSound backgroundMusic = new GreenfootSound("backingTrack.mp3");
     /**
      * Constructor for objects of class TitleScreenWorld.
      * 
@@ -17,8 +17,7 @@ public class TitleScreenWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1100, 700, 1, true); 
-        Greenfoot.playSound("backingTrack.mp3");
-       
+        
         //background
         GreenfootImage background = new GreenfootImage("images/colour6.png");
         background.scale(getWidth(), getHeight());
@@ -37,6 +36,7 @@ public class TitleScreenWorld extends World
     
     public void act()
     {
+        Greenfoot.playSound("backingTrack.mp3");
         if(Greenfoot.mouseClicked(null))
         {
             Greenfoot.setWorld(new InstructionsWorld());
