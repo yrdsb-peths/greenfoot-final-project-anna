@@ -32,7 +32,7 @@ public class Tree extends Enemies
     public void animate()
     {  
         setImage(idle[curIndex]);
-        if(animTimer.millisElapsed() > 50)
+        if(animTimer.millisElapsed() > 70)
         {
             curIndex++;
             curIndex %= 17;

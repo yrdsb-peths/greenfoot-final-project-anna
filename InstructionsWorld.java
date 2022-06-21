@@ -8,12 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InstructionsWorld extends World
 {
-    GreenfootSound backgroundMusic = new GreenfootSound("backingTrack.mp3");
+    //GreenfootSound backgroundMusic = new GreenfootSound("sounds/backingTrack.mp3");
 
     public InstructionsWorld()
     {    
         super(1100, 700, 1, true); 
-        backgroundMusic.playLoop();
+        //backgroundMusic.playLoop();
         //Background
         GreenfootImage background = new GreenfootImage("images/colour6.png");
         background.scale(getWidth(), getHeight());
