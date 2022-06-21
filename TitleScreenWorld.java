@@ -3,12 +3,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class TitleScreenWorld here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Anna Cheng
+ * @June 20 2022
  */
 public class TitleScreenWorld extends World
 {
-    GreenfootSound backgroundMusic = new GreenfootSound("sounds/backingTrack.mp3");
     /**
      * Constructor for objects of class TitleScreenWorld.
      * 
@@ -32,10 +31,11 @@ public class TitleScreenWorld extends World
         addObject(new Duck(), 403, 610);
         addObject(new Tree(), 729, 610);
     }
-    
+    public void started(){
+        
+    }
     public void act()
     {
-        backgroundMusic.play();
         if(Greenfoot.mouseClicked(null))
         {
             Greenfoot.setWorld(new InstructionsWorld());
