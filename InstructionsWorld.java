@@ -8,12 +8,9 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class InstructionsWorld extends World
 {
-    //GreenfootSound backgroundMusic = new GreenfootSound("sounds/backingTrack.mp3");
-
     public InstructionsWorld()
     {    
         super(1100, 700, 1, true); 
-        //backgroundMusic.playLoop();
         //Background
         GreenfootImage background = new GreenfootImage("images/colour6.png");
         background.scale(getWidth(), getHeight());
@@ -29,10 +26,10 @@ public class InstructionsWorld extends World
         Label goal = new Label("Goal", 80);
         addObject(goal, 544, 515);
         
-        Label instruct1 = new Label("Collect all the fruits and go to the", 50);
+        Label instruct1 = new Label("Collect all the fruits and touch the", 50);
         addObject(instruct1, 544, 592);
         
-        Label instruct2 = new Label("endpoint to get to the next level.", 50);
+        Label instruct2 = new Label("trophy to get to the next level.", 50);
         addObject(instruct2, 544, 650);
         
         //Keyboard Images
@@ -44,7 +41,7 @@ public class InstructionsWorld extends World
     }
     public void act()
     {
-        if(Greenfoot.mouseClicked(null))
+        if(Greenfoot.mouseClicked(Buttons.class))
         {
             Greenfoot.setWorld(new Level1());
         }
