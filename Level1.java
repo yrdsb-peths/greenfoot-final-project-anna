@@ -10,7 +10,7 @@ public class Level1 extends World
 {
     public Label scoreLabel = new Label(0,80);
     public int score = 0;
-    
+
     public Level1()
     {
         super(1100, 800, 1, true); 

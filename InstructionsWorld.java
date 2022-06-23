@@ -20,7 +20,7 @@ public class InstructionsWorld extends World
         Label move = new Label("How to Move", 80);
         addObject(move, 544, 69);
         Label jump = new Label("How to Jump", 80);
-        addObject(jump, 544, 306);
+        addObject(jump, 544, 310);
         
         //Goal
         Label goal = new Label("Goal", 80);
@@ -41,7 +41,7 @@ public class InstructionsWorld extends World
     }
     public void act()
     {
-        if(Greenfoot.mouseClicked(Buttons.class))
+        if(Greenfoot.mouseClicked(null))
         {
             Greenfoot.setWorld(new Level1());
         }
