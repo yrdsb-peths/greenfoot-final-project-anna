@@ -3,8 +3,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class Level1 here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @Anna Cheng 
+ * @June 22 2022
  */
 public class Level1 extends World
 {
